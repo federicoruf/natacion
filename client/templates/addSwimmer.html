@@ -1,0 +1,66 @@
+<template name="addSwimmer">
+    {{>menu}}
+    <div class="container">
+        <h3>Agregar nadador</h3>
+        <form class="main-form" id="main-form-submit">
+            <div class="form-group">
+                <label class="control-label" for="nombre"> Nombre:</label>
+                <div class="controls">
+                    <input class="form-control" name="nombre" id="nombre" type="text" value="" placeholder="Ingrese el nombre del nadador"/>
+                </div>
+            </div>
+             <div class="form-group">
+                <label class="control-label" for="apellido"> Apellido:</label>
+                <div class="controls">
+                    <input class="form-control" name="apellido" id="apellido" type="text" value="" placeholder="Ingrese el apellido del nadador"/>
+                </div>
+            </div>
+             <div class="form-group">
+                <label class="control-label" for="dni"> Dni:</label>
+                <div class="controls">
+                    <input class="form-control" name="dni" id="dni" type="number" value="" placeholder="Ingrese el DNI del nadador"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="fechaDeNacimiento"> Fecha de nacimiento:</label>
+                <div class="controls">
+                    <input class="form-control" name="fechaDeNacimiento" id="fechaDeNacimiento" type="date" value=""/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="obraSocial"> Obra social:</label>
+                <div class="controls">
+                    <input class="form-control" name="obraSocial" id="obraSocial" type="text" value="" placeholder="Ingrese la obra social del nadador (en el caso de que no tenga, dejar el campo en blanco)"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="club"> Club:</label>
+                <div class="controls">
+                    <input class="form-control" name="club" id="club" type="text" value="" placeholder="Ingrese el club al que pertenece el nadador"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="ciudad"> Ciudad:</label>
+                <div class="controls">
+                    <input class="form-control" name="ciudad" id="ciudad" type="text" value="" placeholder="Ingrese la cuidad del nadador"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="email"> Correo electrónico:</label>
+                <div class="controls">
+                    <input class="form-control" name="email" id="email" type="email" value="" placeholder="Ingrese el Correo electrónico del nadador"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="sexo"> Sexo:</label>
+                <div class="controls">
+                    <select class="form-control" name="sexo" id="sexo">
+                         <option value="M">Masculino</option>
+                         <option value="F">Femenino</option>
+                    </select>
+                </div>
+            </div>
+            <input type="submit" value="Agregar nadador" class="btn btn-primary"/>
+        </form>
+    </div>
+</template>
