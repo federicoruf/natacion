@@ -17,22 +17,20 @@
                     <th>Sexo</th>
                     <th>Club</th>
                     <th>Ciudad</th>
-                    <th>Obra social</th>
-                    <th>E-mail</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 {{#each nadadores}}
                     <tr>                    
-                        <td><a href="{{pathFor 'swimmerInfo'}}">{{nombre}}</a></td>
+                        <td><a class="infoNadador" href="#">{{nombre}}</a></td>
                         <td>{{apellido}}</td>
                         <td>{{dni}}</td>
                         <td>{{fechaDeNacimiento}}</td>
                         <td>{{sexo}}</td>
                         <td>{{club}}</td>
-                        <td>{{ciudad}}</td>
-                        <td>{{obraSocial}}</td>
-                        <td>{{email}}</td>
+                        <td>{{ciudad}}</td>                        
+                        <td><a href="{{pathFor 'swimmerEdit'}}">Editar</a></td>
                     </tr>
                 {{/each}}
             </tbody>
