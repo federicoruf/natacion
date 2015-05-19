@@ -17,6 +17,7 @@ Template.addSwimmer.events({
             email: e.target.email.value,
             sexo: e.target.sexo.value
         }
+        console.log(nadador);
         /*nadador._id = Nadadores.insert(nadador);
         Router.go('swimmerAdded');    */
         Meteor.call('nadadorInsert', nadador, function(error, result){
