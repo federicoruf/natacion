@@ -22,12 +22,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>John Lilki</td>
-                    <td>September 14, 2013</td>
-                    <td>jhlilk22@yahoo.com</td>
-                    <td>No</td>
-                </tr>
+                {{#each nadadores}}
+                    <tr>                    
+                        <td><a href="{{pathFor 'swimmerInfo'}}">{{nombre}}</a></td>
+                        <td>{{apellido}}</td>
+                        <td>{{dni}}</td>
+                        <td>{{fechaDeNacimiento}}</td>
+                        <td>{{sexo}}</td>
+                        <td>{{club}}</td>
+                        <td>{{ciudad}}</td>
+                        <td>{{obraSocial}}</td>
+                        <td>{{email}}</td>
+                    </tr>
+                {{/each}}
             </tbody>
         </table>
     </div>
