@@ -2,10 +2,6 @@ Template.addSwimmer.events({
     'submit form': function(e) {
         
         e.preventDefault();
-        console.log(e.type);
-        //ESTO ANDA!!!!!!!!!!!!!!!!!!
-        console.log(e.target.nombre.value);
-        //------------
         var nadador = {
             nombre: e.target.nombre.value,
             apellido: e.target.nombre.value,
