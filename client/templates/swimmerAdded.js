@@ -17,6 +17,6 @@ Template.swimmerAdded.events({
                       " Obra social: <strong>" + this.obraSocial + "</strong><br/>" + 
                       " Email: <strong>" + this.email + "</strong><br/>" + 
                       " Sexo: <strong>" + this.sexo + "</strong><br/>" + 
-                      "FOTO!!! +  info adicional sobre resultados anteriores");
+                      "FOTO!!!");
     }
 });
