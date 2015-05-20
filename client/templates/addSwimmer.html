@@ -61,8 +61,10 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label" for="foto"> Foto:</label>
-                  {{> upload_bootstrap }}
+                <label class="control-label" for="foto"> Foto del nadador:</label>
+                    <div class="controls">
+                        {{> upload_bootstrap callbacks=myCallbacks fileTypes='.jpg' multiple=true formData=specificFormData }}
+                    </div>
             </div>
             <input type="submit" value="Agregar nadador" class="btn btn-primary"/>
         </form>

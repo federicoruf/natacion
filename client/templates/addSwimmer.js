@@ -1,3 +1,15 @@
+Template.addSwimmer.helpers({ 
+    myCallbacks: function() {
+        return {
+            //SI EL NOMBRE DEL ARCHIVO YA EXISTE, LE AGREGA (X), X=NUMERO
+            finished: function(index, fileInfo, context) {
+                console.log("fileInfo.name: " + fileInfo.name);
+                Session.set('fileName', fileInfo.name);
+            },            
+        }
+    }
+});
+
 Template.addSwimmer.events({
     'submit form': function(e) {
         
@@ -11,8 +23,12 @@ Template.addSwimmer.events({
             club: e.target.club.value,
             ciudad: e.target.ciudad.value,
             email: e.target.email.value,
-            sexo: e.target.sexo.value
+            sexo: e.target.sexo.value,
+            foto: Session.get('fileName')
         }
+        
+        console.log(Session.get('fileName'));
+        
         /*nadador._id = Nadadores.insert(nadador);
         Router.go('swimmerAdded');    */
         Meteor.call('nadadorInsert', nadador, function(error, result){
