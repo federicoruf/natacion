@@ -8,7 +8,6 @@ if (Nadadores.find().count() === 0) {
         club: 'Chascomus natación',
         ciudad: 'Chascomús',
         email: 'fde.ruf@gmail.com',
-        sexo: 'M',
-        foto: 'DSCN0495.JPG'
+        sexo: 'M'
     });
 }

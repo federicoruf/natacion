@@ -2,10 +2,11 @@ Meteor.startup(function () {
  //process.env.PWD me da undefined, POR ESO TENGO Q ARMAR EL PATH A MANOPLA
   var myStr = process.cwd().split(".meteor")[0];
   myStr2 = myStr.split("C:\\")[1];
+  myStr3 = myStr.split("C:\\")[1];
 
-  tempDir= myStr2 + 'public/.uploads/tmp';
+  tempDir= myStr2 + ".uploads/tmp";
   console.log("tempdir: " + tempDir);
-  uploadDir= myStr2 + 'public/.uploads';   
+  uploadDir= myStr3 + '.uploads';   
   console.log("uploadDir: " + '/' + uploadDir);
     
   UploadServer.init({
