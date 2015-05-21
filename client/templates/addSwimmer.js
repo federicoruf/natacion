@@ -2,6 +2,7 @@ Template.addSwimmer.events({
     'submit form': function(e) {
         
         e.preventDefault();
+        console.log(Session.get("fileName"));
         var nadador = {
             nombre: e.target.nombre.value,
             apellido: e.target.nombre.value,
@@ -12,6 +13,7 @@ Template.addSwimmer.events({
             ciudad: e.target.ciudad.value,
             email: e.target.email.value,
             sexo: e.target.sexo.value
+            //foto: 
         }
         /*nadador._id = Nadadores.insert(nadador);
         Router.go('swimmerAdded');    */
