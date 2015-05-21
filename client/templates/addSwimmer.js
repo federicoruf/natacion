@@ -15,6 +15,7 @@ Template.addSwimmer.events({
             sexo: e.target.sexo.value
             //foto: 
         }
+        console.log(nadador);
         /*nadador._id = Nadadores.insert(nadador);
         Router.go('swimmerAdded');    */
         Meteor.call('nadadorInsert', nadador, function(error, result){
