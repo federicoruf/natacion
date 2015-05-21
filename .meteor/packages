@@ -12,5 +12,3 @@ iron:router
 semantic:ui-menu
 audit-argument-checks
 mizzao:bootboxjs
-tomi:upload-server
-tomi:upload-jquery
