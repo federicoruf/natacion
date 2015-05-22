@@ -7,17 +7,14 @@
                 <a href="{{pathFor 'addSwimmer'}}">Agregar nadador</a>
             </li>
         </ul>
-        <table class="ui table">
+        <table class="ui table" id="tableSwimmers">
             <thead>
                 <tr>
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>DNI</th>
                     <th>Fecha de nacimiento</th>
-                    <th>Sexo</th>
-                    <th>Club</th>
                     <th>Ciudad</th>
-                    <th>Obra social</th>
                     <th></th>
                 </tr>
             </thead>
@@ -28,10 +25,7 @@
                         <td>{{apellido}}</td>
                         <td>{{dni}}</td>
                         <td>{{fechaDeNacimiento}}</td>
-                        <td>{{sexo}}</td>
-                        <td>{{club}}</td>
                         <td>{{ciudad}}</td>
-                        <td>{{obraSocial}}</td>
                         <td><a href="{{pathFor 'swimmerEdit'}}">Editar</a></td>
                     </tr>
                 {{/each}}

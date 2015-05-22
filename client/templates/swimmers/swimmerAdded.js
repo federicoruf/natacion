@@ -6,9 +6,9 @@ Template.swimmerAdded.helpers({
 
 Template.swimmerAdded.events({
     "click .infoNadador": function(){
-        var nadador ={
-            nombre: this.nombre
-        };
+        var imageDB = Images.findOne(this.foto._id);
+        var nombre = imageDB.original.name;
+        var id = imageDB._id;
         bootbox.alert("Nombre y apellido: <strong>" + this.nombre + " " + this.apellido + "</strong><br/>" + 
                       " DNI: <strong>" + this.dni + "</strong><br/>" + 
                       " Fecha de nacimiento: <strong>" + this.fechaDeNacimiento + "</strong><br/>" +  
@@ -17,6 +17,7 @@ Template.swimmerAdded.events({
                       " Obra social: <strong>" + this.obraSocial + "</strong><br/>" + 
                       " Email: <strong>" + this.email + "</strong><br/>" + 
                       " Sexo: <strong>" + this.sexo + "</strong><br/>" + 
-                      "FOTO!!!");
+                      " E-mail: <strong>" + this.email + "</strong><br/>" +
+                      "<img src=/cfs/files/images/" + id + '/'+ nombre + " alt='imagen del nadador' class='thumbnail' height='200' width='250'/>");
     }
 });

@@ -1,0 +1,13 @@
+<!--template de prueba para mostrar las imagenes-->
+<template name="imageView">
+  <div class="imageView">
+      <h1>IMAGENES</h1>
+    {{#each images}}
+      <div>
+           {{this.url}}
+          ----
+          <img src="{{this.url}}" alt="ddd" class="thumbnail" />
+      </div>
+    {{/each}}
+  </div>
+</template>
