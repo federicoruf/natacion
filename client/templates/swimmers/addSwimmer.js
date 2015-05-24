@@ -24,7 +24,7 @@ Template.addSwimmer.events({
         if(errors.nombre || errors.apellido || errors.dni || errors.fechaDeNacimiento || errors.ciudad || errors.club || errors.obraSocial || errors.email || errors.sexo || errors.foto){
             return Session.set('addSwimmerErrors', errors);
         }else{
-            Meteor.call('nadadorInsert', nadador, function(error, result){
+            Meteor.call('swimmerInsert', nadador, function(error, result){  //ojo, cambie nadaddorUpdate x swimmerInsert, a ver si se rompe algo
                 if (error) {
                     return alert(error.reason);
                 }else{
@@ -50,7 +50,7 @@ Template.addSwimmer.created = function(){
 };
 Template.addSwimmer.helpers({
     errorMessage: function(field) {
-       return Session.get('addSwimmerErrors')[field];
+        return Session.get('addSwimmerErrors')[field];
     },
     errorClass: function(field) {
         return !!Session.get('addSwimmerErrors')[field] ? 'has-error' : '';

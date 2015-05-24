@@ -17,7 +17,6 @@ Template.swimmerAdded.events({
                       " Obra social: <strong>" + this.obraSocial + "</strong><br/>" + 
                       " Email: <strong>" + this.email + "</strong><br/>" + 
                       " Sexo: <strong>" + this.sexo + "</strong><br/>" + 
-                      " E-mail: <strong>" + this.email + "</strong><br/>" +
-                      "<img src=/cfs/files/images/" + id + '/'+ nombre + " alt='imagen del nadador' class='thumbnail' height='200' width='250'/>");
+                      "<img src=/cfs/files/images/" + id + '/'+ nombre + " alt='imagen del nadador' class='thumbnail' height='200' width='260'/>" +                       " Información adicional: datos sobre resultados en competencias anteriores");
     }
 });
