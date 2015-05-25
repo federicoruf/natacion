@@ -7,3 +7,6 @@
 .container {
   background: #efeef0;
 }
+.selected{
+  background-color: yellow;
+}

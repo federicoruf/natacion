@@ -1,10 +1,5 @@
 <template name="swimmerAdded">
-        <h3>Nadadores existentes</h3>
-        <ul class="nav navbar-nav">
-            <li>
-                <a href="{{pathFor 'addSwimmer'}}">Agregar nadador</a>
-            </li>
-        </ul>
+        {{> header}}
         <table class="ui table" id="tableSwimmers">
             <thead>
                 <tr>
@@ -16,18 +11,8 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
-                {{#each nadadores}}
-                    <tr>                    
-                        <td><a class="infoNadador" href="#">{{nombre}}</a></td>
-                        <td>{{apellido}}</td>
-                        <td>{{dni}}</td>
-                        <td>{{fechaDeNacimiento}}</td>
-                        <td>{{ciudad}}</td>
-                        <td><a href="{{pathFor 'swimmerEdit'}}">Editar</a></td>
-                    </tr>
-                {{/each}}
-            </tbody>
-        </table>
-
+        {{#each nadadores}}
+            {{>swimmerInfo}}
+        {{/each}}
+      </table>
 </template>
