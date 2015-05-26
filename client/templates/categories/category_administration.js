@@ -1,5 +1,5 @@
 Template.categoryAdministration.helpers({
-  category: function() {
-    return Categories.find();
-  }
+    category: function() {
+        return Categories.find();
+    }
 });
