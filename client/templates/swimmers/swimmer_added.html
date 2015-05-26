@@ -1,5 +1,5 @@
 <template name="swimmerAdded">
-        {{> header}}
+        {{> headerSwimmerAdded}}
         <table class="ui table" id="tableSwimmers">
             <thead>
                 <tr>
@@ -11,7 +11,7 @@
                     <th></th>
                 </tr>
             </thead>
-        {{#each nadadores}}
+        {{#each nadador}}
             {{>swimmerInfo}}
         {{/each}}
       </table>

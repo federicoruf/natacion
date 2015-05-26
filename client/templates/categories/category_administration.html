@@ -1,0 +1,23 @@
+<template name="categoryAdministration">
+    {{> headerCategoryAdministration}}
+    <table class="ui table" id="tableCategories">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Año inicio</th>
+                <th>Año fin</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each category}}
+                <tr>                    
+                    <td>{{name}}</td>
+                    <td>{{yearStart}}</td>
+                    <td>{{yearFinish}}</td>
+                    <td><a href="{{pathFor 'categoryEdit'}}">Editar</a></td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</template>

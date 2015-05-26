@@ -1,9 +1,7 @@
 Template.swimmerAdded.helpers({
-  nadadores: function() {
-  
-    return Nadadores.find();
-  }
-
+    nadador: function() {
+        return Nadadores.find();
+    }
 });
 
 Template.swimmerAdded.events({
