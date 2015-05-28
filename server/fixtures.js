@@ -1,4 +1,22 @@
 if (Nadadores.find().count() === 0) {
+  
+  //CREO UN USUARIO X DEFECTO Y LE ASIGNO UN ROL
+  var idUser = Accounts.createUser({
+    username: 'admin',
+    email: 'admin',
+    password: 'admin',
+    profile: {
+      first_name: 'admin',
+      last_name: 'admin',
+      company: 'admin',
+    }
+  });                    
+  Roles.createRole('director');
+  Roles.createRole('assistantDirector');
+  Roles.createRole('visitor');
+  
+  Roles.addUsersToRoles(idUser, ['director']);
+  
   var fotoHTTP = 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/2/005/084/072/16f8711.jpg';
   fileObj = Images.insert(fotoHTTP, function(err, fileObj){
     //alert(error.reason);
@@ -16,7 +34,6 @@ if (Nadadores.find().count() === 0) {
     infoAdicional: '',
     foto: fileObj
   });
-  console.log("INSERTA CATEGORIAS!!!!!!!!!!!!!!!!!!!!!!!!!!!1");
   Categories.insert({name: 'Menores', yearStart: 2001, yearFinish: 2002});
   Categories.insert({name: 'Cadetes', yearStart: 1998, yearFinish: 2001});
   Categories.insert({name: 'Juveniles', yearStart: 1995, yearFinish: 1997});
@@ -30,4 +47,5 @@ if (Nadadores.find().count() === 0) {
   Categories.insert({name: 'Master G', yearStart: 1950, yearFinish: 1954});
   Categories.insert({name: 'Master H', yearStart: 1945, yearFinish: 1949});
   Categories.insert({name: 'Master I', yearStart: 1900, yearFinish: 1944});
+  
 }

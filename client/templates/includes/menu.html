@@ -1,12 +1,18 @@
 <template name="menu">    
-    <br/>
-    <div class="ui menu">
-        <a id="itemButton" class="item" onmouseover="{{changeStyle}}" href="{{pathFor 'swimmerAdded'}}"><strong>Nadadores inscriptos</strong></a>
-        <a id="itemButton" class="item" onmouseover="{{changeStyle}}" href="{{pathFor 'swimmerArrive'}}"><strong>Orden de llegada</strong></a>
+  <br/>
+  <div class="collapse navbar-collapse" id="navigation">
+    <ul class="nav navbar-nav navbar-right">
+      {{> loginButtons}}
+    </ul>
+  </div>
+  <div class="ui menu">
+    <a id="itemButton" class="item" onmouseover="{{changeStyle}}" href="{{pathFor 'welcome'}}"><strong>Principal</strong></a>
+    {{#if currentUser}}
+      <a id="itemButton" class="item" onmouseover="{{changeStyle}}" href="{{pathFor 'swimmerAdded'}}"><strong>Nadadores inscriptos</strong></a>
+      <a id="itemButton" class="item" onmouseover="{{changeStyle}}" href="{{pathFor 'swimmerArrive'}}"><strong>Orden de llegada</strong></a>
+      {{#if isInRole 'director' 'growth hacker'}}
         <a id="itemButton" class="item" onmouseover="{{changeStyle}}" href="{{pathFor 'categoryAdministration'}}"><strong>Administrar categorías</strong></a>
-    </div>
-    <div class="ui segment">
-        <p></p>
-        <p></p>
-    </div>
+      {{/if}}
+    {{/if}}
+  </div>
 </template>

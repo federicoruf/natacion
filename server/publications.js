@@ -11,6 +11,10 @@ Meteor.publish('categories', function(){
    return Categories.find(); 
 });
 
+Meteor.publish(null, function (){ 
+  return Meteor.roles.find({})
+});
+
 Images.allow({
   insert: function(userId, doc) { return true; },
   update: function(userId,doc) { return true; },
