@@ -15,9 +15,15 @@ Meteor.publish('null', function (){
   return Meteor.roles.find({})
 });
 
+Meteor.publish("users", function () {
+  return Meteor.users.find({});
+});
+
+
 Images.allow({
   insert: function(userId, doc) { return true; },
   update: function(userId,doc) { return true; },
   remove: function(userId,doc) { return false; },
   download: function(userId, doc) {return true;},
 });
+

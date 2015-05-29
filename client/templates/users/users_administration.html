@@ -1,0 +1,36 @@
+<template name="usersAdministration">
+  {{> headerUsersAdministration}}
+  <table class="ui table" id="tableCategories">
+    <thead>
+      <tr>
+        <th>Nombre de usuario</th>
+        <th>Rol</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each user}}
+        <tr>
+          <td>{{username}}</td>
+          {{#if roleIsEmpty}}
+            <td>visitante</td>
+          {{else}}
+            <td>{{roles}}</td>
+          {{/if}}
+          <td><a href="{{pathFor 'userEdit'}}">Editar</a></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>
+
+<template name="categoryInfo">
+  <tbody>
+    <tr class="categ {{selectedClass}}">
+      <td>{{name}}</td>
+      <td>{{yearStart}}</td>
+      <td>{{yearFinish}}</td>
+      <td><a href="{{pathFor 'categoryEdit'}}">Editar</a></td>        
+    </tr>
+  </tbody>
+</template>
