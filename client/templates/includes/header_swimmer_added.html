@@ -2,7 +2,9 @@
   <h3>Nadadores existentes</h3>
   <ul class="nav navbar-nav">
     <li>
-      <a href="{{pathFor 'addSwimmer'}}">Agregar nadador</a>
+      {{#if isDirectororAssistant}}
+        <a href="{{pathFor 'addSwimmer'}}">Agregar nadador</a>
+      {{/if}}
     </li>
   </ul>
 </template>

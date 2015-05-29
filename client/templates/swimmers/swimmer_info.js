@@ -5,9 +5,10 @@ Template.swimmerInfo.helpers({
     if (swimmerId === selectedSwimmer){
       return 'selected';
     }
-  }
-
+  },
 });
+
+
 Template.swimmerInfo.events({
   'click .swim': function(){
       Session.set('selectedSwimmer',this._id);

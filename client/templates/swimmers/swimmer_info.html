@@ -6,7 +6,9 @@
           <td>{{dni}}</td>
           <td>{{fechaDeNacimiento}}</td>
           <td>{{ciudad}}</td>
-          <td><a href="{{pathFor 'swimmerEdit'}}">Editar</a></td>
+          {{#if isDirectororAssistant}}
+            <td><a href="{{pathFor 'swimmerEdit'}}">Editar</a></td>
+          {{/if}}
         </tr>
 </tbody>
 

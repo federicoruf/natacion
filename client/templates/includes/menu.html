@@ -10,8 +10,9 @@
     {{#if currentUser}}
       <a id="itemButton" class="item" onmouseover="{{changeStyle}}" href="{{pathFor 'swimmerAdded'}}"><strong>Nadadores inscriptos</strong></a>
       <a id="itemButton" class="item" onmouseover="{{changeStyle}}" href="{{pathFor 'swimmerArrive'}}"><strong>Orden de llegada</strong></a>
-      {{#if isInRole 'director' 'growth hacker'}}
+      {{#if isInRole 'director'}}
         <a id="itemButton" class="item" onmouseover="{{changeStyle}}" href="{{pathFor 'categoryAdministration'}}"><strong>Administrar categorías</strong></a>
+        <a id="itemButton" class="item" onmouseover="{{changeStyle}}" href="{{pathFor 'usersAdministration'}}"><strong>Administrar usuarios</strong></a>
       {{/if}}
     {{/if}}
   </div>

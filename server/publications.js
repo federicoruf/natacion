@@ -11,7 +11,7 @@ Meteor.publish('categories', function(){
    return Categories.find(); 
 });
 
-Meteor.publish(null, function (){ 
+Meteor.publish('null', function (){ 
   return Meteor.roles.find({})
 });
 

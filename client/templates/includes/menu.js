@@ -3,9 +3,3 @@ Template.menu.helpers({
         //console.log("andoo!");
     }
 });
-
-/*Template.menu.events({
-    "click .item": function (event, template) {
-        alert("My button was clicked!");
-    }
-});*/
