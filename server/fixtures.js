@@ -9,6 +9,7 @@ if (Nadadores.find().count() === 0) {
       first_name: 'admin',
       last_name: 'admin',
       company: 'admin',
+      enable: true
     }
   });                    
   Roles.createRole('director');

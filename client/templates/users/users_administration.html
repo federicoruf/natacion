@@ -5,6 +5,7 @@
       <tr>
         <th>Nombre de usuario</th>
         <th>Rol</th>
+        <th>Habilitado</th>
         <th></th>
       </tr>
     </thead>
@@ -17,20 +18,14 @@
           {{else}}
             <td>{{roles}}</td>
           {{/if}}
+          {{#if profile.enable}}
+            <td><input type="checkbox" name="enable" value="enable" class="changeEnable" checked/></td>
+          {{else}}
+            <td><input type="checkbox" name="enable" value="enable" class="changeEnable"/></td>
+          {{/if}}
           <td><a href="{{pathFor 'userEdit'}}">Editar</a></td>
         </tr>
       {{/each}}
     </tbody>
   </table>
-</template>
-
-<template name="categoryInfo">
-  <tbody>
-    <tr class="categ {{selectedClass}}">
-      <td>{{name}}</td>
-      <td>{{yearStart}}</td>
-      <td>{{yearFinish}}</td>
-      <td><a href="{{pathFor 'categoryEdit'}}">Editar</a></td>        
-    </tr>
-  </tbody>
 </template>
