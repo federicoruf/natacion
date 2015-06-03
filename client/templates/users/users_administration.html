@@ -13,11 +13,23 @@
       {{#each user}}
         <tr>
           <td>{{username}}</td>
-          {{#if roleIsEmpty}}
-            <td>visitante</td>
-          {{else}}
-            <td>{{roles}}</td>
-          {{/if}}
+          <select>
+            {{#each userRole}}
+              <option value="{{name}}" {{selected ../roles}}>{{name}}</option>
+              <!--{{#if roleIsSelected }}
+                <option selected>{{name}}</option>
+              {{else}}
+                <option>{{name}}</option>
+              {{/if}}
+              -->
+              
+              <!--{{#if roleIsEmpty}}
+                <option{{selected foo ''}}>visitante</option>
+              {{else}}
+                <option{{selected foo roles}}>{{roles}}</option>
+              {{/if}}-->
+            {{/each}}
+          </select>
           {{#if profile.enable}}
             <td><input type="checkbox" name="enable" value="enable" class="changeEnable" checked/></td>
           {{else}}

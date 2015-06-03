@@ -1,0 +1,52 @@
+Template.usersAdministration.helpers({
+  user: function() {
+    return Meteor.users.find();
+  },
+  
+  roleIsSelected: function() {
+    console.log(this.user);
+    console.log("rol " + this.roles);
+    console.log("name " + this.name);
+    /*if(this.roles == undefined & this.name == 'visitor'){
+      return true;
+    }
+    return false;*/
+  },
+  
+  enableIsChecked: function() {                      //esta al pedo me parece
+    return this.profile.enable;
+  },
+  
+  userRole: function() {
+    return Meteor.roles.find().fetch()
+    /*var roles = Meteor.roles.find().fetch();
+    console.log(roles);
+    var rolesNombre = [];
+    for (var i=0; i<roles.length; i++) {
+      rolesNombre.push(roles[i].name);
+    }
+    console.log(rolesNombre);
+    return rolesNombre;
+  }*/
+  }
+});
+
+
+Template.usersAdministration.events({
+  'click .changeEnable': function() {
+    console.log(this.username);
+    this.profile.enable = !this.profile.enable;
+    Meteor.call('updateEnable', this, function(error, result){
+      console.log("actualiza");
+      if (error) {
+        return alert(error.reason);
+      }    
+    });
+  }
+});
+
+/*
+Template.userAdministration('selected', function(foo, bar) {
+  console.log("aaaaaaaaaaaaa");
+  console.log(this.user.username);
+});*/

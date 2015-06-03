@@ -3,20 +3,19 @@ if (Nadadores.find().count() === 0) {
   //CREO UN USUARIO X DEFECTO Y LE ASIGNO UN ROL
   var idUser = Accounts.createUser({
     username: 'admin',
-    email: 'admin',
     password: 'admin',
     profile: {
-      first_name: 'admin',
-      last_name: 'admin',
-      company: 'admin',
       enable: true
-    }
+    },
+    roles: []
   });                    
   Roles.createRole('director');
   Roles.createRole('assistantDirector');
   Roles.createRole('visitor');
   
   Roles.addUsersToRoles(idUser, ['director']);
+  
+  //Roles.setUserRoles(this.profile, ['director']);   RESETEAR LA BD Y VER DONDE Y COMO QUEDA GUARDADO, SI NO ANDA ASÍ, AGREGAR A MANO EL ROL COMO UN ARRAY ADENTRO DE PROFILE Y FUERA
   
   var fotoHTTP = 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/2/005/084/072/16f8711.jpg';
   fileObj = Images.insert(fotoHTTP, function(err, fileObj){

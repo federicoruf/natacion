@@ -1,7 +1,9 @@
 Accounts.onCreateUser(function(options, user) {
-  console.log('11111111111111' + user._id);
   user.profile = options.profile || {};
   user.profile.enable = true;  
+  console.log(user._id);
+  console.log(user);
+  user.roles = ['visitor'];
   return user;
 });
 
