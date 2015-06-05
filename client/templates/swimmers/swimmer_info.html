@@ -1,15 +1,15 @@
 <template name="swimmerInfo">
   <tbody>
-      <tr class="swim {{selectedClass}}">
-          <td><a class="infoNadador" href="#">{{nombre}}</a></td>
-          <td>{{apellido}}</td>
-          <td>{{dni}}</td>
-          <td>{{fechaDeNacimiento}}</td>
-          <td>{{ciudad}}</td>
-          {{#if isDirectororAssistant}}
-            <td><a href="{{pathFor 'swimmerEdit'}}">Editar</a></td>
-          {{/if}}
-        </tr>
-</tbody>
-
+    <tr class="swim {{selectedClass}}">
+      <td><a class="infoNadador" href="#">{{nombre}}</a></td>
+      <td>{{apellido}}</td>
+      <td>{{dni}}</td>
+      <td>{{numero}}</td>
+      <td>{{fechaDeNacimiento}}</td>
+      <td>{{ciudad}}</td>
+      {{#if isDirectororAssistant}}
+        <td><a href="{{pathFor 'swimmerEdit'}}">Editar</a></td>
+      {{/if}}
+    </tr>
+  </tbody>
 </template>

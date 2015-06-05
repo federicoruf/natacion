@@ -11,6 +11,6 @@ Template.swimmerInfo.helpers({
 
 Template.swimmerInfo.events({
   'click .swim': function(){
-      Session.set('selectedSwimmer',this._id);
+    Session.set('selectedSwimmer',this._id);
   }
 });

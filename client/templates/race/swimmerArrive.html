@@ -1,3 +1,25 @@
 <template name="swimmerArrive">
-    <h3>Nadadores que llegaron</h3>
+  <h3>Nadadores que llegaron</h3>
+   <form class="main form" id="main-form-submit">
+    <div class="form-group {{errorClass 'numero'}}">
+      <label class="control-label" for="numero"> Numero:</label>
+      <div class="controls">
+        <input class="form-control" name="numero" id="numero" type="number" value="" placeholder="Ingrese el número del nadador"/>
+        <span class="help-block">{{errorMessage 'numero'}}</span>
+      </div>
+      <input type="submit" value="Agregar" class="btn btn-primary"/>
+    </div>
+  </form>
+  <table class="ui table" id="tableSwimmerArrive">
+    <thead>
+      <tr>
+        <th>Posición</th>
+        <th>Número</th>
+        <th>Nombre</th>
+      </tr>
+    </thead>
+    <!--{{#each ordenDeLlegada}}
+        {{>categoryInfo}}
+    {{/each}}-->
+  </table>
 </template>

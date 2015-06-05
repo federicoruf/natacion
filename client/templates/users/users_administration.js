@@ -18,19 +18,11 @@ Template.usersAdministration.helpers({
   },
   
   selected: function(myRole){
-    /*if (myRole == undefined && this.name !=  'visitor') {
-      return '';
+    if(this.name == myRole[0]){   
+      return 'selected';
     } else {
-      if (myRole == undefined && this.name ==  'visitor') {
-        return 'selected';
-      } else {*/
-        if(this.name == myRole[0]){   
-          return 'selected';
-        } else {
-          return '';
-        }
-      
-    
+      return '';
+    }    
   }
 });
 

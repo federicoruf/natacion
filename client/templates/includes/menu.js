@@ -1,7 +1,7 @@
 Template.menu.helpers({
-    changeStyle: function() {
-        //console.log("andoo!");
-    }
+  changeStyle: function() {
+    //console.log("andoo!");
+  }
 });
 
 
