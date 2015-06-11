@@ -11,6 +11,10 @@ Meteor.publish('categories', function(){
    return Categories.find(); 
 });
 
+Meteor.publish('ordenDeLlegada', function(){
+  return OrdenDeLlegada.find();
+});
+
 Meteor.publish('roles', function (){ 
   return Meteor.roles.find({});
 });

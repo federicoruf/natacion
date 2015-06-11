@@ -32,6 +32,7 @@ if (Nadadores.find().count() === 0) {
     email: 'fde.ruf@gmail.com',
     sexo: 'M',
     infoAdicional: '',
+    numero: 24,
     foto: fileObj
   });
   Categories.insert({name: 'Menores', yearStart: 2001, yearFinish: 2002});
