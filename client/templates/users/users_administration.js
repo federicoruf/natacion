@@ -55,11 +55,13 @@ Template.usersAdministration.events({
         return alert(error.reason);
       }    
     });
+  },
+  
+  'click .resetPassword': function() {
+    console.log(this.username);
+    console.log(this._id);
+    console.log(this.password);
+    //Accounts.setPassword(this._id, '1111');
+    Meteor.call ('changeUserPassword', this);
   }
 });
-
-/*
-Template.userAdministration('selected', function(foo, bar) {
-  console.log("aaaaaaaaaaaaa");
-  console.log(this.user.username);
-});*/
