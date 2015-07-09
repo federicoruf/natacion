@@ -1,6 +1,10 @@
 Template.swimmerAdded.helpers({
   nadador: function() {
     return Nadadores.find();
+  },
+  
+  myCollection: function () {
+    return Nadadores;
   }
 });
 
