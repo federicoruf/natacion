@@ -1,20 +1,4 @@
 <template name="swimmerAdded">
   {{> headerSwimmerAdded}}
-  {{> reactiveTable collection=myCollection}}
-  <!--<table class="ui table" id="tableSwimmers">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>DNI</th>
-        <th>Número</th>
-        <th>Fecha de nacimiento</th>
-        <th>Ciudad</th>
-        <th></th>
-      </tr>
-    </thead>
-    {{#each nadador}}
-      {{>swimmerInfo}}
-    {{/each}}
-  </table>-->
+  {{> reactiveTable collection=myCollection settings=tableSettings}}
 </template>
