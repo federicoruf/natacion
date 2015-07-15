@@ -1,0 +1,98 @@
+if (Nadadores.find().count() === 0) {
+  
+  //CREO UN USUARIO X DEFECTO Y LE ASIGNO UN ROL
+  var idUser = Accounts.createUser({
+    username: 'admin',
+    password: 'admin',
+    profile: {
+      enable: true
+    },
+    roles: []
+  });                    
+  Roles.createRole('director');
+  Roles.createRole('assistantDirector');
+  Roles.createRole('visitor');
+  
+  Roles.addUsersToRoles(idUser, ['director']);
+  
+  //Roles.setUserRoles(this.profile, ['director']);   RESETEAR LA BD Y VER DONDE Y COMO QUEDA GUARDADO, SI NO ANDA ASÍ, AGREGAR A MANO EL ROL COMO UN ARRAY ADENTRO DE PROFILE Y FUERA
+  
+  var fotoHTTP = 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/2/005/084/072/16f8711.jpg';
+  fileObj = Images.insert(fotoHTTP, function(err, fileObj){
+    //alert(error.reason);
+  });        
+    
+  Nadadores.insert({
+    nombre: 'Federico',
+    apellido: 'Rufrancos',
+    dni: '1111111',
+    fechaDeNacimiento: '12-08-1988',
+    obraSocial: 'IOMA',
+    club: 'Chascomus natación',
+    ciudad: 'Chascomús',
+    email: 'fde.ruf@gmail.com',
+    sexo: 'M',
+    infoAdicional: '',
+    numero: 429,
+    categoria: 'Mayores',
+    foto: fileObj,
+  });
+/*   
+  Nadadores.insert({nombre: 'Elian', apellido: 'Pardo', dni: '1111111', fechaDeNacimiento: '12-08-1997', obraSocial: 'IOMA', club: 'Club Aleman', ciudad: '----', email: '1fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 449, categoria: 'Juveniles', foto: '',});
+ 
+  Nadadores.insert({nombre: 'Lucas', apellido: 'Bulazio', dni: '12', fechaDeNacimiento: '12-08-1997', obraSocial: 'IOMA', club: 'Universitario', ciudad: 'La Plata', email: '2fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 101, categoria: 'Juveniles', foto: '',});
+  
+  Nadadores.insert({nombre: 'Lautaro', apellido: 'Lasagna', dni: '13', fechaDeNacimiento: '12-08-1988', obraSocial: 'IOMA', club: 'Richard Team', ciudad: '----', email: '3fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 591 , categoria: 'Mayores', foto: '',});
+  
+  Nadadores.insert({nombre: 'Pedro', apellido: 'Baldantoni', dni: '14', fechaDeNacimiento: '12-08-1988', obraSocial: 'IOMA', club: 'Baldanton', ciudad: '----', email: '4fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 561, categoria: 'Mayores', foto: '',});
+  
+  Nadadores.insert({nombre: 'Matias', apellido: 'Cagliano', dni: '15', fechaDeNacimiento: '12-08-1998', obraSocial: 'IOMA', club: 'Circulo catolico de obreros de lomas de zamora', ciudad: 'Lomas de Zamora', email: '5fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 441, categoria: 'Cadetes', foto: '',});
+  
+   Nadadores.insert({nombre: 'Francisco', apellido: 'Sanchez', dni: '16', fechaDeNacimiento: '12-08-1997', obraSocial: 'IOMA', club: 'Universitario', ciudad: 'La Plata', email: '6fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 160 , categoria: 'Juveniles', foto: '',});
+  
+   Nadadores.insert({nombre: 'Fernando', apellido: 'Valdez', dni: '17', fechaDeNacimiento: '12-08-1970', obraSocial: 'IOMA', club: 'Círculo católico bernal', ciudad: 'Bernal', email: '7fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 497, categoria: 'Master C', foto: '',});
+  
+   Nadadores.insert({nombre: 'Facundo', apellido: 'Domes', dni: '18', fechaDeNacimiento: '12-08-1975', obraSocial: 'IOMA', club: 'Poseidon', ciudad: 'City Bell', email: '8fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 156, categoria: 'Master B', foto: '',});
+  
+   Nadadores.insert({nombre: 'Juan Pedro', apellido: 'Radinovsky', dni: '19', fechaDeNacimiento: '12-08-1988', obraSocial: 'IOMA', club: 'Richard Team', ciudad: '----', email: '9fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 566, categoria: 'Mayores', foto: '',});
+  
+   Nadadores.insert({nombre: 'Leandro', apellido: 'Gioa', dni: '20', fechaDeNacimiento: '12-08-1975', obraSocial: 'IOMA', club: 'Richard Team', ciudad: '----', email: '10fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 300, categoria: 'Master B', foto: '',});
+  
+   Nadadores.insert({nombre: 'Nicolas', apellido: 'Walsh', dni: '21', fechaDeNacimiento: '12-08-1988', obraSocial: 'IOMA', club: 'Vecinal de Munro', ciudad: 'Munro', email: '11fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 755, categoria: 'Mayores', foto: '',});
+  
+   Nadadores.insert({nombre: 'Gustavo', apellido: 'De Nobili', dni: '22', fechaDeNacimiento: '12-08-1970', obraSocial: 'IOMA', club: 'Velez Sarsfield', ciudad: '----', email: '12fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 90 , categoria: 'Master C', foto: '',});
+  
+  Nadadores.insert({nombre: 'Verónica', apellido: 'Romero Serwatka', dni: '23', fechaDeNacimiento: '12-08-19', obraSocial: 'IOMA', club: 'Defensores de Bandfield', ciudad: 'Bandfield', email: '13fde.ruf@gmail.com', sexo: 'F', infoAdicional: '', numero: 517, categoria: 'Master C', foto: '',});
+  
+  Nadadores.insert({nombre: 'Walter', apellido: 'Canosa', dni: '24', fechaDeNacimiento: '12-08-19', obraSocial: 'IOMA', club: 'Estoa', ciudad: '-----', email: '14fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 536, categoria: 'Master C', foto: '',});
+  
+  Nadadores.insert({nombre: 'Marcelo', apellido: 'Castro', dni: '25', fechaDeNacimiento: '12-08-19', obraSocial: 'IOMA', club: 'Quinto estilo', ciudad: '----', email: '15fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 501, categoria: 'Master C', foto: '',});
+  
+  Nadadores.insert({nombre: 'Camila', apellido: 'Otaran', dni: '26', fechaDeNacimiento: '12-08-19', obraSocial: 'IOMA', club: 'Sporting Club', ciudad: 'Wilde', email: '16fde.ruf@gmail.com', sexo: 'F', infoAdicional: '', numero: 536, categoria: 'Master C', foto: '',});
+  
+  Nadadores.insert({nombre: 'German Raul', apellido: 'Gallo', dni: '27', fechaDeNacimiento: '12-08-19', obraSocial: 'IOMA', club: 'Actitud acuatica', ciudad: '----', email: '17fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 501, categoria: 'Master C', foto: '',});
+  
+  Nadadores.insert({nombre: 'Gustavo', apellido: 'Acuña', dni: '28', fechaDeNacimiento: '12-08-19', obraSocial: 'IOMA', club: 'Aminal Team', ciudad: '----', email: '18fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 476, categoria: 'Master C', foto: '',});
+  
+  Nadadores.insert({nombre: 'Gustavo Adrian', apellido: 'D\'Amelia', dni: '29', fechaDeNacimiento: '12-08-19', obraSocial: 'IOMA', club: 'CDSA', ciudad: '----', email: '19fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 461, categoria: 'Master C', foto: '',});
+  
+  Nadadores.insert({nombre: 'Ignacio', apellido: 'Borre', dni: '30', fechaDeNacimiento: '12-08-19', obraSocial: 'IOMA', club: 'Defensores de Glew', ciudad: 'Glew', email: '20fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 752, categoria: 'Master C', foto: '',});
+  
+  Nadadores.insert({nombre: 'Matias', apellido: 'Machado', dni: '31', fechaDeNacimiento: '12-08-19', obraSocial: 'IOMA', club: 'Club Neptunia', ciudad: 'Gualeguaychu', email: '21fde.ruf@gmail.com', sexo: 'M', infoAdicional: '', numero: 446, categoria: 'Master C', foto: '',});
+  */
+  //Nadadores.insert({nombre: '', apellido: '', dni: '', fechaDeNacimiento: '12-08-19', obraSocial: 'IOMA', club: '', ciudad: '', email: 'fde.ruf@gmail.com', sexo: '', infoAdicional: '', numero:  , categoria: 'Master C', foto: '',});
+  
+  Categories.insert({name: 'Menores', yearStart: 2001, yearFinish: 2002});
+  Categories.insert({name: 'Cadetes', yearStart: 1998, yearFinish: 2001});
+  Categories.insert({name: 'Juveniles', yearStart: 1995, yearFinish: 1997});
+  Categories.insert({name: 'Mayores', yearStart: 1985, yearFinish: 1994});
+  Categories.insert({name: 'Master A', yearStart: 1980, yearFinish: 1984});
+  Categories.insert({name: 'Master B', yearStart: 1975, yearFinish: 1979});
+  Categories.insert({name: 'Master C', yearStart: 1970, yearFinish: 1974});
+  Categories.insert({name: 'Master D', yearStart: 1965, yearFinish: 1969});
+  Categories.insert({name: 'Master E', yearStart: 1960, yearFinish: 1964});
+  Categories.insert({name: 'Master F', yearStart: 1955, yearFinish: 1959});
+  Categories.insert({name: 'Master G', yearStart: 1950, yearFinish: 1954});
+  Categories.insert({name: 'Master H', yearStart: 1945, yearFinish: 1949});
+  Categories.insert({name: 'Master I', yearStart: 1900, yearFinish: 1944});
+}

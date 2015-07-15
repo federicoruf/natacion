@@ -3,9 +3,26 @@ Template.addSwimmer.events({
     e.preventDefault();
     //VALIDACIÓN DE ARCHIVOS
     var file = e.target.foto.files[0];  //toma el archivo subido en el formulario
-    fileObj = Images.insert(file, function(err, fileObj){
-      //alert(error.reason);
-    });         
+    var fileObj;
+    if (file != undefined) {
+      fileObj = Images.insert(file, function(err, fileObj){
+        //alert(error.reason);
+      });         
+    }
+  
+    //asigna automaticamente la categoría al nadador de acuerdo al año de nacimiento ingresado
+    var year = e.target.fechaDeNacimiento.value.substring(0,4);
+    var allCategories = Categories.find().fetch();
+    var find = false;
+    var i = 0;
+    while (!find && i < allCategories.length) {
+      if (year >= allCategories[i].yearStart && year <= allCategories[i].yearFinish) {
+        find = true;
+      } else {
+        i++;
+      }
+    }
+    
     var nadador = {
       nombre: e.target.nombre.value,
       apellido: e.target.apellido.value,
@@ -18,13 +35,15 @@ Template.addSwimmer.events({
       sexo: e.target.sexo.value,
       foto: fileObj,
       numero: parseInt(e.target.numero.value),
+      categoria: allCategories[i].name
     }
     //VALIDACIÓN DE CAMPOS
     var errors = validateNadador(nadador);
     if(errors.nombre || errors.apellido || errors.dni || errors.fechaDeNacimiento || errors.ciudad || errors.club || errors.obraSocial || errors.email || errors.sexo || errors.foto || errors.numero){
       return Session.set('addSwimmerErrors', errors);
     } else {
-      Meteor.call('swimmerInsert', nadador, function(error, result){  //ojo, cambie nadaddorUpdate x swimmerInsert, a ver si se rompe algo
+      Meteor.call('swimmerInsert', nadador, function(error, result){  
+        //ojo, cambie nadaddorUpdate x swimmerInsert, a ver si se rompe algo
         if (error) {
           return alert(error.reason);
         } else {
